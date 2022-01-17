@@ -56,7 +56,6 @@ export default function Map({setCoordinates, setBounds, coordinates, places, set
                 ))}
                 {weatherData?.list?.map((data, i) => (
                     <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
-                        console.log("i: "+{i});
                         <img height={100} src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt=''/>
                     </div>
                 ))}
