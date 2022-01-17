@@ -5,17 +5,13 @@ import PlaceDetails from '../PlaceDetails/PlaceDetails';
 
 import useStyles from './styles';
 
-export default function List({places, childClicked, isLoading}) {
+export default function List({places, childClicked, isLoading, type, setType, rating, setRating}) {
     const classes= useStyles();
-    const [type, setType]=useState('restaurants');
-    const [rating, setRating]=useState('');
     const [elRefs, setElRefs]=useState([]);
 
     useEffect(()=>{
-        // setElRefs((refs) => Array(places?.length).fill().map((_, i) => refs[i] || createRef()));
         const refs=Array(places?.length).fill().map((_, i)=> elRefs[i] || createRef());
         setElRefs(refs);
-        console.log(elRefs)
     }, [places]);
 
     return (
